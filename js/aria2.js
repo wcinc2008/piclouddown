@@ -84,7 +84,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
           cnt += 1;
       }
       if (cnt > 1)
-        title += " ("+cnt+ " files..)"
+        title += " ("+cnt+ " 文件..)"
     }
     return title;
   }
@@ -98,7 +98,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
 
   return {
     init: function(path, onready) {
-      var connect_msg_id = main_alert("alert-info", "connecting...");
+      var connect_msg_id = main_alert("alert-info", "正在连接...");
       $("#add-task-option-wrap").empty().append(YAAW.tpl.add_task_option({}));
       $("#aria2-gsetting").empty().append(YAAW.tpl.aria2_global_setting({}));
 
@@ -358,7 +358,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
 
           if (select_lock) return;
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           var snapshot = new Array();
