@@ -695,7 +695,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
           if (!result.result)
             main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
           else
-            main_alert("alert-success", "Saved", 2000);
+            main_alert("alert-success", "以保存", 2000);
         }
       );
     },
