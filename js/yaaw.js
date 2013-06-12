@@ -525,7 +525,7 @@ var YAAW = (function() {
       },
 
       clean: function() {
-        $("#uri-input").attr("placeholder", "HTTP, FTP or Magnet");
+        $("#uri-input").attr("placeholder", "HTTP, FTP 或 磁力链接");
         $("#add-task-modal .input-clear").val("");
         $("#add-task-alert").hide();
         torrent_file = null;
