@@ -39,7 +39,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
     var error_msg = get_error(result);
 
     $("#main-alert .alert").attr("class", "alert alert-error");
-    $("#main-alert .alert-msg").html("<strong>错误: </strong>"+error_msg);
+    $("#main-alert .alert-msg").html("<strong>Error: </strong>"+error_msg);
     $("#main-alert").show();
   }
 
@@ -388,7 +388,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
           //console.debug(result);
 
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           var snapshot = new Array();
@@ -413,7 +413,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
         function(result) {
           if (select_lock) return;
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           result = ARIA2.status_fix(result.result);
@@ -439,7 +439,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
           if (select_lock) return;
 
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           result = ARIA2.status_fix(result.result);
@@ -668,7 +668,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("getGlobalOption", [],
         function(result) {
           if (!result.result)
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
 
           result = result.result;
           $("#aria2-gsetting").empty().append(YAAW.tpl.aria2_global_setting(result));
@@ -680,7 +680,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("getGlobalOption", [],
         function(result) {
           if (!result.result)
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
 
           result = result.result;
           result["parameterized-uri"] = (result["parameterized-uri"] == "true" ? true : false)
@@ -693,7 +693,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("changeGlobalOption", [options],
         function(result) {
           if (!result.result)
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           else
             main_alert("alert-success", "已保存", 2000);
         }
@@ -704,7 +704,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("getGlobalStat", [],
         function(result) {
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           result = result.result;
@@ -731,7 +731,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("getVersion", [],
         function(result) {
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           $("#global-version").text("Aria2 "+result.result.version || "");
@@ -743,7 +743,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("tellStatus", [gid],
         function(result) {
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           }
 
           result = result.result;
@@ -765,7 +765,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       ARIA2.request("changeOption", [gid, options],
         function(result) {
           if (!result.result) {
-            main_alert("alert-error", "<strong>错误: </strong>RPC发生错误。", 5000);
+            main_alert("alert-error", "<strong>Error: </strong>RPC发生错误。", 5000);
           } else {
             main_alert("alert-success", "成功保存设置!", 2000);
           }
